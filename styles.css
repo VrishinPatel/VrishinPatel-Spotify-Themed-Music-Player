@@ -1,0 +1,256 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1db954;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#results {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+#results li {
+    padding: 10px;
+    background-color: #2ecc71;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#results li:hover {
+    background-color: #27ae60;
+}
+
+.track-info {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #1db954;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #1ed760;
+}
+
+.progress-bar {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.progress-bar input {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #535353;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.progress-bar input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.progress-bar input::-webkit-slider-thumb:hover {
+    background: #1ed760;
+}
+
+.time-info {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.volume-control {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.volume-control label {
+    margin-right: 10px;
+}
+
+.volume-control input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    background: #535353;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.volume-control input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.volume-control input::-webkit-slider-thumb:hover {
+    background: #1ed760;
+}
+
+/* New styles for account icon and dropdown menu */
+.account-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.account-icon img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.account-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #1db954;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.account-menu button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.account-menu button:hover {
+    background-color: #1ed760;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1db954;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin: 10px 0 5px;
+}
+
+.modal-content input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.modal-content button {
+    padding: 10px;
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #27ae60;
+}

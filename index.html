@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify-Themed Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player">
+        <input type="text" id="search" placeholder="Search for a song" onkeypress="searchSongs(event)">
+        <ul id="results"></ul>
+        <div class="track-info">
+            <span id="track-title">Track Title</span>
+        </div>
+        <div class="controls">
+            <button id="prev" onclick="prevTrack()">⏮</button>
+            <button id="play-pause" onclick="playPause()">▶️</button>
+            <button id="next" onclick="nextTrack()">⏭</button>
+        </div>
+        <div id="player"></div>
+        <div class="progress-bar">
+            <input type="range" id="progress" value="0" max="100" oninput="seekTrack(this.value)">
+        </div>
+        <div class="time-info">
+            <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+        </div>
+        <div class="volume-control">
+            <label for="volume">Volume:</label>
+            <input type="range" id="volume" value="100" max="100" oninput="setVolume(this.value)">
+        </div>
+    </div>
+
+    <div class="account-icon">
+        <img src="account-icon.png" alt="Account Icon" onclick="toggleAccountMenu()">
+        <div id="account-menu" class="account-menu">
+            <button onclick="openLoginModal()">Login</button>
+            <button onclick="openCreateAccountModal()">Create Account</button>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="login(event)">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="create-account-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
+            <h2>Create Account</h2>
+            <form id="create-account-form" onsubmit="createAccount(event)">
+                <label for="create-email">Email:</label>
+                <input type="email" id="create-email" required>
+                <label for="create-password">Password:</label>
+                <input type="password" id="create-password" required>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
